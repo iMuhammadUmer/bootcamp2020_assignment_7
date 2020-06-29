@@ -4,6 +4,18 @@ import { makeStyles } from "@material-ui/core/styles";
 import Paper from "@material-ui/core/Paper";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
+import { Pie } from "react-chartjs-2";
+
+const data = {
+  labels: ["Red", "Blue", "Yellow"],
+  datasets: [
+    {
+      data: [300, 50, 100],
+      backgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
+      hoverBackgroundColor: ["#FF6384", "#36A2EB", "#FFCE56"],
+    },
+  ],
+};
 
 const useStyles = makeStyles((theme) => ({
   body: {
@@ -60,6 +72,10 @@ function App() {
               </Button>
             </Paper>
           </div>
+        </div>
+        <div>
+          <h2>Pie Example</h2>
+          <Pie data={data} />
         </div>
       </header>
     </div>
